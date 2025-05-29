@@ -1,74 +1,44 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:298620800743:task-definition/webapp-devops-workshop:1",
-    "containerDefinitions": [
+  "family": "webapp-devops-workshop",
+  "taskRoleArn": "arn:aws:iam::298620800743:role/devops-cluster-TaskRole-NINTCEqxLRaA",
+  "executionRoleArn": "arn:aws:iam::298620800743:role/ECSTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "webapp",
+      "image": "IMAGE1_NAME",
+      "cpu": 0,
+      "links": [],
+      "portMappings": [
         {
-            "name": "webapp",
-            "image": "<IMAGE1_NAME>",
-            "cpu": 0,
-            "links": [],
-            "portMappings": [
-                {
-                    "containerPort": 80,
-                    "hostPort": 80,
-                    "protocol": "tcp"
-                }
-            ],
-            "essential": true,
-            "entryPoint": [],
-            "command": [],
-            "environment": [],
-            "environmentFiles": [],
-            "mountPoints": [],
-            "volumesFrom": [],
-            "secrets": [],
-            "dnsServers": [],
-            "dnsSearchDomains": [],
-            "extraHosts": [],
-            "dockerSecurityOptions": [],
-            "dockerLabels": {},
-            "ulimits": [],
-            "systemControls": [],
-            "credentialSpecs": []
+          "containerPort": 80,
+          "hostPort": 80,
+          "protocol": "tcp"
         }
-    ],
-    "family": "webapp-devops-workshop",
-    "taskRoleArn": "arn:aws:iam::298620800743:role/devops-cluster-TaskRole-NINTCEqxLRaA",
-    "executionRoleArn": "arn:aws:iam::298620800743:role/ECSTaskExecutionRole",
-    "networkMode": "awsvpc",
-    "revision": 1,
-    "volumes": [],
-    "status": "ACTIVE",
-    "requiresAttributes": [
-        {
-            "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.task-iam-role"
-        },
-        {
-            "name": "ecs.capability.execution-role-ecr-pull"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
-            "name": "ecs.capability.task-eni"
-        }
-    ],
-    "placementConstraints": [],
-    "compatibilities": [
-        "EC2",
-        "FARGATE"
-    ],
-    "requiresCompatibilities": [
-        "FARGATE"
-    ],
-    "cpu": "256",
-    "memory": "512",
-    "registeredAt": "2025-05-29T05:18:58.532Z",
-    "registeredBy": "arn:aws:sts::298620800743:assumed-role/vscode-server-VSCodeInstanceRole-DXQSfyIB7UeU/i-007f149b974084a65",
-    "tags": []
+      ],
+      "essential": true,
+      "entryPoint": [],
+      "command": [],
+      "environment": [],
+      "environmentFiles": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "secrets": [],
+      "dnsServers": [],
+      "dnsSearchDomains": [],
+      "extraHosts": [],
+      "dockerSecurityOptions": [],
+      "dockerLabels": {},
+      "ulimits": [],
+      "systemControls": [],
+      "credentialSpecs": []
+    }
+  ],
+  "volumes": [],
+  "placementConstraints": [],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512"
 }
